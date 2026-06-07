@@ -10,8 +10,8 @@ export default function AdminCatalogPage() {
   return (
     <main className="page">
       <h1>Catalog</h1>
-      <p className="lede">Curated MVP-safe gifts only. Automated supplier integrations are post-MVP.</p>
-      <section className="card">
+      <p className="lede">Curated gifts with known availability and fulfilment notes.</p>
+      <section className="card sunny table-wrap">
         <table>
           <thead>
             <tr>

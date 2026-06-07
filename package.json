@@ -6,7 +6,8 @@
     "dev": "pnpm --filter blinkapp dev",
     "build": "pnpm --filter blinkapp build",
     "lint": "pnpm --filter blinkapp lint",
-    "test": "pnpm --filter blinkapp test"
+    "test": "pnpm --filter blinkapp test",
+    "test:e2e": "pnpm --filter blinkapp test:e2e"
   },
   "workspaces": [
     "blinkapp",

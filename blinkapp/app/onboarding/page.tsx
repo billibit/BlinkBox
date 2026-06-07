@@ -1,25 +1,22 @@
 import { getCurrentUser } from "@/lib/auth";
-import { getBudget } from "@/lib/budget-service";
-import { getDefaultPaymentMethod } from "@/lib/payment-service";
+import { Sparkles } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
 export default async function OnboardingPage() {
   const user = await getCurrentUser();
   if (!user) return null;
-  const budget = getBudget(user.id);
-  const payment = getDefaultPaymentMethod(user.id);
 
   return (
     <main className="page">
       <h1>Onboarding</h1>
       <p className="lede">
-        The MVP captures preferences, address, budget, and a saved card before monthly gift
-        decisions can be reviewed by an admin.
+        Tell BlinkBox what you like, where gifts should go, and how much you want to spend each
+        month.
       </p>
 
       <section className="grid">
-        <form className="card stack" action="/api/onboarding" method="post">
+        <form className="card soft stack" action="/api/onboarding" method="post">
           <h2>Profile and preferences</h2>
           <label>
             Name
@@ -37,14 +34,18 @@ export default async function OnboardingPage() {
             Blocked categories
             <input name="blockedCategories" placeholder="e.g. snacks, fragrance" />
           </label>
-          <button type="submit">Save onboarding</button>
+          <button type="submit">
+            <Sparkles size={18} strokeWidth={3} />
+            Save onboarding
+          </button>
         </form>
 
-        <section className="card stack">
-          <h2>Status</h2>
-          <p>Budget: {budget ? "configured" : "missing"}</p>
-          <p>Payment method: {payment ? "saved" : "missing"}</p>
-          <p className="muted">Demo user is preloaded so the MVP loop can be tested immediately.</p>
+        <section className="card mint stack">
+          <h2>A quiet start</h2>
+          <p className="muted">
+            Your answers help BlinkBox understand your taste without revealing what comes next.
+          </p>
+          <p className="muted">You can update these details any time.</p>
         </section>
       </section>
     </main>

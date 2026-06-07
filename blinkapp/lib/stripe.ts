@@ -5,7 +5,7 @@ export async function createSetupSession(userId: string) {
     id: makeId("cs_setup"),
     userId,
     mode: "setup" as const,
-    url: "/budget?setup=demo-complete"
+    url: "/budget?setup=complete"
   };
 }
 

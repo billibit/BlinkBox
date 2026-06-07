@@ -61,6 +61,6 @@ export function runDueSchedules(asOf = new Date()) {
 function buildReasoning(itemId: string) {
   const item = findCatalogItem(itemId);
   return item
-    ? `${item.name} fits the user's current budget and keeps the beta surprise low-risk.`
-    : "Gift candidate fits the user's current budget and beta guardrails.";
+    ? `${item.name} fits the user's current budget and keeps the surprise thoughtful and low-risk.`
+    : "Gift candidate fits the user's current budget and safety guardrails.";
 }

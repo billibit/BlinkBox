@@ -1,7 +1,6 @@
 import { getCurrentUser } from "@/lib/auth";
-import { getBudget, getRemainingBudget } from "@/lib/budget-service";
-import { getDefaultPaymentMethod } from "@/lib/payment-service";
-import { currency } from "@/lib/utils";
+import { getBudget } from "@/lib/budget-service";
+import { CreditCard, Save } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -9,13 +8,12 @@ export default async function BudgetPage() {
   const user = await getCurrentUser();
   if (!user) return null;
   const budget = getBudget(user.id);
-  const payment = getDefaultPaymentMethod(user.id);
 
   return (
     <main className="page">
       <h1>Budget</h1>
       <section className="grid">
-        <form className="card stack" action="/api/budget" method="post">
+        <form className="card sunny stack" action="/api/budget" method="post">
           <h2>Monthly budget</h2>
           <label>
             Monthly limit
@@ -38,26 +36,27 @@ export default async function BudgetPage() {
           <label>
             Rollover
             <select name="rolloverEnabled" defaultValue={budget?.rolloverEnabled ? "true" : "false"}>
-              <option value="false">Off for MVP</option>
+              <option value="false">Off</option>
               <option value="true">Enabled</option>
             </select>
           </label>
-          <button type="submit">Save budget</button>
+          <button type="submit">
+            <Save size={18} strokeWidth={3} />
+            Save budget
+          </button>
         </form>
 
-        <section className="card stack">
+        <section className="card sky stack">
           <h2>Payment setup</h2>
-          <p>
-            Saved card:{" "}
-            <strong>{payment ? payment.stripePaymentMethodId : "not configured"}</strong>
-          </p>
-          <p>Remaining this cycle: {currency(getRemainingBudget(user.id))}</p>
           <form action="/api/payment/setup" method="post">
-            <button type="submit">Start Stripe setup</button>
+            <button type="submit">
+              <CreditCard size={18} strokeWidth={3} />
+              Start Stripe setup
+            </button>
           </form>
           <p className="muted">
-            In production this opens Stripe Checkout setup mode. In this local MVP it redirects
-            back with a demo setup result.
+            BlinkBox uses secure Stripe setup for future gifts, while the surprise itself stays
+            under wraps.
           </p>
         </section>
       </section>

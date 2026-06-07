@@ -1,0 +1,10 @@
+node_modules/
+.next/
+blinkapp/.next/
+blinkapp/playwright-report/
+blinkapp/test-results/
+playwright-report/
+test-results/
+.env
+.env.local
+*.log

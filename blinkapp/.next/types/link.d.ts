@@ -46,6 +46,7 @@ declare namespace __next_route_internal_types__ {
     | `/api/schedules/run`
     | `/api/stripe/webhook`
     | `/api/support`
+    | `/api/test/reset`
     | `/budget`
     | `/gifts`
     | `/login`

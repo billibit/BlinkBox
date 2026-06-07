@@ -10,7 +10,7 @@ export default function AdminUsersPage() {
   return (
     <main className="page">
       <h1>Users</h1>
-      <section className="card">
+      <section className="card sky table-wrap">
         <table>
           <thead>
             <tr>

@@ -12,9 +12,16 @@ export default async function GiftsPage() {
   return (
     <main className="page">
       <h1>Gifts</h1>
-      <p className="lede">Track approved gifts, fulfilment, and feedback.</p>
+      <p className="lede">Your surprises live here after they are ready to be remembered.</p>
       <div className="grid">
-        {orders.length ? orders.map((order) => <OrderCard key={order.id} order={order} />) : <p className="muted">No gifts have been approved yet.</p>}
+        {orders.length ? (
+          orders.map((order) => <OrderCard key={order.id} order={order} />)
+        ) : (
+          <section className="card sky">
+            <h3>Nothing to reveal yet.</h3>
+            <p className="muted">The best part is not knowing too early.</p>
+          </section>
+        )}
       </div>
     </main>
   );

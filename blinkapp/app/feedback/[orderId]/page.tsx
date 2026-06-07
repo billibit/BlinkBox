@@ -1,4 +1,5 @@
 import { getOrderView } from "@/lib/order-service";
+import { MessageCircleHeart } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -9,7 +10,7 @@ export default async function FeedbackPage({ params }: { params: Promise<{ order
   return (
     <main className="page">
       <h1>Gift feedback</h1>
-      <form className="card stack" action="/api/feedback" method="post">
+      <form className="card soft stack" action="/api/feedback" method="post">
         <input name="orderId" type="hidden" value={orderId} />
         <p className="muted">{order?.item?.name ?? "Gift order"}</p>
         <label>
@@ -33,7 +34,10 @@ export default async function FeedbackPage({ params }: { params: Promise<{ order
           Comment
           <textarea name="comment" placeholder="What should BlinkBox learn?" />
         </label>
-        <button type="submit">Save feedback</button>
+        <button type="submit">
+          <MessageCircleHeart size={18} strokeWidth={3} />
+          Save feedback
+        </button>
       </form>
     </main>
   );

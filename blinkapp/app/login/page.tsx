@@ -4,8 +4,7 @@ export default function LoginPage() {
       <h1>Login</h1>
       <section className="card">
         <p className="muted">
-          Auth.js is planned for production. The MVP scaffold uses the preloaded beta user and
-          operator so the product loop can be exercised locally.
+          Sign in to manage your monthly surprises, budget, gift history, and support requests.
         </p>
         <a className="button" href="/">
           Continue

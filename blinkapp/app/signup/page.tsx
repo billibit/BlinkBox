@@ -4,8 +4,7 @@ export default function SignupPage() {
       <h1>Signup</h1>
       <section className="card">
         <p className="muted">
-          Invite-only signup will create a user, address, payment setup session, and monthly
-          schedule. Use onboarding for the current MVP demo path.
+          Create your BlinkBox profile, set your preferences, and choose a monthly surprise budget.
         </p>
         <a className="button" href="/onboarding">
           Start onboarding
