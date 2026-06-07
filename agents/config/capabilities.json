@@ -1,0 +1,14 @@
+{
+  "skills": [
+    {
+      "name": "gift-picking",
+      "status": "planned",
+      "mode": "recommendation_only"
+    },
+    {
+      "name": "fulfillment-research",
+      "status": "planned",
+      "mode": "research_only"
+    }
+  ]
+}

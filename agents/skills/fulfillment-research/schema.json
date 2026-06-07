@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FulfillmentResearchResult",
+  "type": "object",
+  "required": ["notes"],
+  "properties": {
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

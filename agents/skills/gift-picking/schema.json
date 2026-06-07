@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GiftPickingResult",
+  "type": "object",
+  "required": ["candidates"],
+  "properties": {
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "priceCents", "reason", "riskFlags"],
+        "properties": {
+          "name": { "type": "string" },
+          "priceCents": { "type": "integer" },
+          "reason": { "type": "string" },
+          "riskFlags": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

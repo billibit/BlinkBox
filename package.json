@@ -1,0 +1,15 @@
+{
+  "name": "blinkbox",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "pnpm --filter blinkapp dev",
+    "build": "pnpm --filter blinkapp build",
+    "lint": "pnpm --filter blinkapp lint",
+    "test": "pnpm --filter blinkapp test"
+  },
+  "workspaces": [
+    "blinkapp",
+    "agents"
+  ]
+}
