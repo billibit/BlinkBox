@@ -16,8 +16,9 @@ test.describe("BlinkBox browser flow", () => {
     await expect(page.getByText("Pending reviews")).toHaveCount(0);
     await expect(page.getByText("Remaining")).toHaveCount(0);
     await expect(page.getByText("Recent gifts")).toHaveCount(0);
+    await expect(page.getByText("Life is hard. Make yourself happy.")).toBeVisible();
     await expect(page.getByRole("link", { name: /Begin/ })).toBeVisible();
-    await expect(page.getByRole("link", { name: /Set budget/ })).toBeVisible();
+    await expect(page.getByRole("link", { name: /Set budget/ })).toHaveCount(0);
   });
 
   test("lets the customer update budget settings", async ({ page }) => {

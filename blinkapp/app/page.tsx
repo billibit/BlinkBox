@@ -13,16 +13,13 @@ export default function HomePage() {
           <span className="tiny-note">BlinkBox</span>
           <h1>A little surprise, chosen for you.</h1>
           <p className="lede">
-            Tell us what feels like you. BlinkBox quietly prepares thoughtful gifts within your
-            comfort zone, then keeps the rest a little mysterious.
+            Life is hard. Make yourself happy. Set a monthly budget, and your little AI companion
+            will pick a mystery gift just for you.
           </p>
           <div className="actions">
             <a className="button" href="/onboarding">
               <Sparkles size={18} strokeWidth={3} />
               Begin
-            </a>
-            <a className="button secondary" href="/budget">
-              Set budget
             </a>
           </div>
         </div>

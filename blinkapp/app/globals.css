@@ -66,6 +66,8 @@ textarea {
 }
 
 .shell {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -131,9 +133,26 @@ textarea {
 }
 
 .page {
+  flex: 1;
   margin: 0 auto;
   max-width: 1180px;
   padding: var(--space-6) var(--space-5) 64px;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-5);
+}
+
+.site-footer a {
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.site-footer a:hover {
+  color: var(--color-ink);
 }
 
 .hero {
@@ -511,6 +530,26 @@ th {
 
 .section-band {
   margin-top: var(--space-6);
+}
+
+.onboarding-flow {
+  display: grid;
+  gap: var(--space-5);
+  justify-items: center;
+}
+
+.center-card {
+  max-width: 680px;
+  width: 100%;
+}
+
+.center-card textarea {
+  min-height: 180px;
+}
+
+.quiet-note {
+  max-width: 680px;
+  width: 100%;
 }
 
 .tiny-note {

@@ -5,8 +5,7 @@ import { z } from "zod";
 
 const schema = z.object({
   name: z.string().min(1),
-  personality: z.enum(["cozy", "curious", "chaos"]),
-  blockedCategories: z.string().optional()
+  aboutYourself: z.string().min(1)
 });
 
 export async function POST(request: Request) {

@@ -1,5 +1,6 @@
 import { getCurrentUser } from "@/lib/auth";
 import { updateBudget } from "@/lib/budget-service";
+import { getDefaultPaymentMethod, startPaymentSetup } from "@/lib/payment-service";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -21,6 +22,11 @@ export async function POST(request: Request) {
     paused: input.paused === "true",
     rolloverEnabled: input.rolloverEnabled === "true"
   });
+
+  if (!getDefaultPaymentMethod(user.id)) {
+    const session = await startPaymentSetup(user.id);
+    return NextResponse.redirect(new URL(session.url, request.url));
+  }
 
   return NextResponse.redirect(new URL("/budget", request.url));
 }
