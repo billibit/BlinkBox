@@ -1,7 +1,0 @@
-{
-  "/api/onboarding/route": "app/api/onboarding/route.js",
-  "/api/budget/route": "app/api/budget/route.js",
-  "/budget/page": "app/budget/page.js",
-  "/page": "app/page.js",
-  "/onboarding/page": "app/onboarding/page.js"
-}
