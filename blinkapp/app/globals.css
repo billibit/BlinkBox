@@ -42,6 +42,10 @@ body {
   overflow-x: clip;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   background:
@@ -137,6 +141,7 @@ textarea {
   margin: 0 auto;
   max-width: 1180px;
   padding: var(--space-6) var(--space-5) 64px;
+  width: 100%;
 }
 
 .site-footer {
@@ -270,6 +275,10 @@ p svg {
   grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
 }
 
+.grid > * {
+  min-width: 0;
+}
+
 .stack {
   display: grid;
   gap: var(--space-4);
@@ -280,6 +289,7 @@ p svg {
   border: 3px solid var(--color-line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-pop);
+  min-width: 0;
   padding: var(--space-5);
   transition:
     box-shadow 140ms ease,
@@ -372,6 +382,11 @@ button {
   white-space: nowrap;
 }
 
+.button span,
+button span {
+  min-width: 0;
+}
+
 .button:hover,
 button:hover {
   background: var(--color-teal-dark);
@@ -428,6 +443,13 @@ textarea {
 textarea {
   min-height: 96px;
   resize: vertical;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
 }
 
 table {
@@ -579,10 +601,16 @@ th {
   }
 
   .topbar {
-    align-items: flex-start;
-    display: grid;
-    gap: var(--space-3);
-    padding: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .brand {
+    font-size: 18px;
+  }
+
+  .brand-mark {
+    height: 34px;
+    width: 34px;
   }
 
   .nav {
@@ -597,8 +625,33 @@ th {
     padding: var(--space-5) var(--space-4) 48px;
   }
 
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page {
+    min-height: calc(100svh - 120px);
+    padding-top: var(--space-5);
+  }
+
+  .home-quiet {
+    align-content: center;
+    min-height: auto;
+  }
+
+  .mystery-orb {
+    height: 76px;
+    margin-bottom: var(--space-4);
+    width: 76px;
+  }
+
   .hero-copy {
     padding: var(--space-5);
+  }
+
+  .hero-copy::before {
+    left: var(--space-5);
+    width: min(156px, calc(100% - 48px));
   }
 
   .surprise-box {
@@ -607,11 +660,119 @@ th {
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 38px;
+    line-height: 1.03;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .lede {
+    font-size: 17px;
   }
 
   .button,
   button {
     min-width: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --shadow-pop: 3px 3px 0 var(--color-shadow);
+  }
+
+  body {
+    background-size: 22px 22px, auto;
+  }
+
+  .topbar {
+    position: sticky;
+  }
+
+  .page {
+    padding: var(--space-4) var(--space-3) 40px;
+  }
+
+  .site-footer {
+    padding: var(--space-4);
+  }
+
+  .hero {
+    margin-bottom: var(--space-5);
+  }
+
+  .hero-copy,
+  .card {
+    border-width: 2px;
+    padding: var(--space-4);
+  }
+
+  .quiet-card {
+    max-width: 100%;
+  }
+
+  .quiet-card .actions,
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button,
+  button {
+    border-width: 2px;
+    min-height: 48px;
+    white-space: normal;
+    width: 100%;
+  }
+
+  input,
+  select,
+  textarea {
+    border-width: 2px;
+    font-size: 16px;
+  }
+
+  .center-card textarea {
+    min-height: 220px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .tiny-note {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand {
+    font-size: 17px;
+  }
+
+  .brand-mark {
+    height: 32px;
+    width: 32px;
+  }
+
+  .page {
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+  }
+
+  h1 {
+    font-size: 30px;
   }
 }
